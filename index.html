@@ -1,0 +1,1411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plant Electricians Guide 2026</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: #e0e0e0;
+            padding: 1%;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 100%;
+            margin: 0 auto;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #0f3460 0%, #16213e 100%);
+            padding: 12px 1%;
+            border-radius: 8px;
+            margin-bottom: 1%;
+            border: 2px solid #e94560;
+            box-shadow: 0 4px 15px rgba(233, 69, 96, 0.3);
+        }
+        
+        h1 {
+            color: #ffd700;
+            font-size: 1.3em;
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        
+        .nav-tabs {
+            display: flex;
+            gap: 1%;
+            margin-bottom: 1%;
+            flex-wrap: wrap;
+        }
+        
+        .nav-btn {
+            flex: 1;
+            min-width: 30%;
+            padding: 10px;
+            background: linear-gradient(135deg, #e94560 0%, #c72d47 100%);
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.85em;
+            font-weight: bold;
+            transition: all 0.3s;
+            margin-bottom: 1%;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .nav-btn:hover, .nav-btn.active {
+            background: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%);
+            color: #1a1a2e;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(255, 215, 0, 0.4);
+        }
+        
+        .content-section {
+            display: none;
+            background: rgba(22, 33, 62, 0.8);
+            padding: 1%;
+            border-radius: 8px;
+            border: 1px solid #e94560;
+            backdrop-filter: blur(10px);
+        }
+        
+        .content-section.active {
+            display: block;
+            animation: fadeIn 0.4s;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        h2 {
+            color: #ffd700;
+            font-size: 1.1em;
+            margin: 1% 0;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #e94560;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        h3 {
+            color: #ffed4e;
+            font-size: 0.95em;
+            margin: 1% 0;
+            padding-left: 8px;
+            border-left: 3px solid #e94560;
+        }
+        
+        .card {
+            background: rgba(15, 52, 96, 0.6);
+            padding: 1%;
+            margin: 1% 0;
+            border-radius: 6px;
+            border-left: 4px solid #e94560;
+            transition: all 0.3s;
+        }
+        
+        .card:hover {
+            border-left-color: #ffd700;
+            background: rgba(15, 52, 96, 0.8);
+            transform: translateX(4px);
+        }
+        
+        .step {
+            background: rgba(233, 69, 96, 0.1);
+            padding: 1%;
+            margin: 1% 0;
+            border-radius: 6px;
+            border: 1px solid #e94560;
+        }
+        
+        .step-number {
+            display: inline-block;
+            background: #e94560;
+            color: white;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 28px;
+            font-weight: bold;
+            margin-right: 8px;
+            font-size: 0.85em;
+        }
+        
+        .warning {
+            background: rgba(255, 193, 7, 0.15);
+            border-left: 4px solid #ffc107;
+            padding: 1%;
+            margin: 1% 0;
+            border-radius: 4px;
+        }
+        
+        .warning::before {
+            content: "⚠️ ";
+            font-weight: bold;
+            color: #ffc107;
+        }
+        
+        .safety {
+            background: rgba(233, 69, 96, 0.15);
+            border-left: 4px solid #e94560;
+            padding: 1%;
+            margin: 1% 0;
+            border-radius: 4px;
+        }
+        
+        .safety::before {
+            content: "🛡️ ";
+            font-weight: bold;
+            color: #e94560;
+        }
+        
+        ul, ol {
+            margin: 1% 0 1% 5%;
+        }
+        
+        li {
+            margin: 6px 0;
+            color: #e0e0e0;
+        }
+        
+        .skill-level {
+            display: inline-block;
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 0.75em;
+            font-weight: bold;
+            margin-left: 6px;
+        }
+        
+        .beginner { background: #4caf50; color: white; }
+        .intermediate { background: #ff9800; color: white; }
+        .advanced { background: #f44336; color: white; }
+        
+        .checklist {
+            list-style: none;
+            margin-left: 0;
+        }
+        
+        .checklist li::before {
+            content: "☐ ";
+            color: #ffd700;
+            font-weight: bold;
+            margin-right: 6px;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 1%;
+            padding: 12px 1%;
+            color: #888;
+            font-size: 0.75em;
+            background: rgba(22, 33, 62, 0.6);
+            border-radius: 6px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>⚡ Plant Electricians Guide 2026</h1>
+        </header>
+        
+        <div class="nav-tabs">
+            <button class="nav-btn active" onclick="showSection('instructions')">Instructions</button>
+            <button class="nav-btn" onclick="showSection('procedures')">Procedures</button>
+            <button class="nav-btn" onclick="showSection('skills')">Skills</button>
+            <button class="nav-btn" onclick="showSection('terminology')">Terminology</button>
+            <button class="nav-btn" onclick="showSection('faults')">Faults</button>
+            <button class="nav-btn" onclick="showSection('calculations')">Calculations</button>
+            <button class="nav-btn" onclick="showSection('codes')">Codes</button>
+            <button class="nav-btn" onclick="showSection('specs')">Specs</button>
+            <button class="nav-btn" onclick="showSection('maintenance')">Maintenance</button>
+            <button class="nav-btn" onclick="showSection('contacts')">Contacts</button>
+        </div>
+        
+        <div id="instructions" class="content-section active">
+            <h2>General Instructions & Safety</h2>
+            
+            <div class="safety">
+                <strong>Primary Safety Rules:</strong> Always follow LOTO (Lockout/Tagout) procedures. Never work on live circuits without proper authorization and PPE. Verify zero energy state before beginning work.
+            </div>
+            
+            <div class="card">
+                <h3>Daily Pre-Work Requirements</h3>
+                <ul class="checklist">
+                    <li>Inspect all personal protective equipment (PPE)</li>
+                    <li>Check tool condition and calibration dates</li>
+                    <li>Review job hazard analysis (JHA) for assigned tasks</li>
+                    <li>Attend safety briefing and toolbox talk</li>
+                    <li>Verify communication devices are functional</li>
+                    <li>Confirm work permits are active and valid</li>
+                </ul>
+            </div>
+            
+            <div class="card">
+                <h3>Required Personal Protective Equipment</h3>
+                <ul>
+                    <li><strong>Arc Flash PPE:</strong> Category rated clothing based on task analysis</li>
+                    <li><strong>Safety Glasses:</strong> ANSI Z87.1 rated with side shields</li>
+                    <li><strong>Hard Hat:</strong> Class E electrical rated</li>
+                    <li><strong>Insulated Gloves:</strong> Voltage rated with leather protectors</li>
+                    <li><strong>Steel Toe Boots:</strong> Electrical hazard (EH) rated</li>
+                    <li><strong>Hearing Protection:</strong> When noise exceeds 85 dBA</li>
+                </ul>
+            </div>
+            
+            <div class="card">
+                <h3>Essential Tools Checklist</h3>
+                <ul>
+                    <li>Multimeter (CAT III or IV rated)</li>
+                    <li>Non-contact voltage tester</li>
+                    <li>Insulated hand tools set</li>
+                    <li>Cable cutters and strippers</li>
+                    <li>Torque screwdrivers/wrenches</li>
+                    <li>Megohmmeter (insulation tester)</li>
+                    <li>Thermal imaging camera</li>
+                    <li>Clamp meter with TRMS</li>
+                </ul>
+            </div>
+            
+            <div class="warning">
+                <strong>Critical Reminders:</strong> All electrical work must comply with NEC 2023, NFPA 70E-2024, and facility-specific standards. Unauthorized modifications are strictly prohibited.
+            </div>
+            
+            <div class="card">
+                <h3>Documentation Requirements</h3>
+                <ul>
+                    <li>Complete work orders with accurate time stamps</li>
+                    <li>Record all test measurements and calibrations</li>
+                    <li>Document equipment modifications in maintenance logs</li>
+                    <li>Update electrical drawings for any circuit changes</li>
+                    <li>File incident reports within 24 hours</li>
+                    <li>Maintain personal training certification records</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div id="procedures" class="content-section">
+            <h2>Step-by-Step Procedures</h2>
+            
+            <div class="card">
+                <h3>Lockout/Tagout (LOTO) Procedure</h3>
+                <div class="step">
+                    <span class="step-number">1</span>
+                    <strong>Preparation:</strong> Identify all energy sources (electrical, mechanical, hydraulic, pneumatic, thermal). Review equipment-specific LOTO procedures.
+                </div>
+                <div class="step">
+                    <span class="step-number">2</span>
+                    <strong>Notification:</strong> Inform all affected employees and operators. Post warning signs at control stations and equipment location.
+                </div>
+                <div class="step">
+                    <span class="step-number">3</span>
+                    <strong>Shutdown:</strong> Use normal stopping procedures. Ensure equipment is at complete stop before proceeding.
+                </div>
+                <div class="step">
+                    <span class="step-number">4</span>
+                    <strong>Isolation:</strong> Open disconnects, remove fuses, or rack out circuit breakers. Apply personal locks and tags to all isolation points.
+                </div>
+                <div class="step">
+                    <span class="step-number">5</span>
+                    <strong>Stored Energy Release:</strong> Discharge capacitors, release spring tension, block mechanical parts, and bleed hydraulic/pneumatic lines.
+                </div>
+                <div class="step">
+                    <span class="step-number">6</span>
+                    <strong>Verification:</strong> Test with appropriate voltage detector. Attempt normal start. Verify zero energy state confirmed.
+                </div>
+                <div class="step">
+                    <span class="step-number">7</span>
+                    <strong>Work Completion:</strong> Remove tools, reinstall guards, clear personnel. Remove locks only after personal verification.
+                </div>
+            </div>
+            
+            <div class="card">
+                <h3>Motor Control Center (MCC) Maintenance</h3>
+                <div class="step">
+                    <span class="step-number">1</span>
+                    <strong>Pre-Work:</strong> Obtain electrical work permit. Review single-line diagram and arc flash label. Don appropriate PPE.
+                </div>
+                <div class="step">
+                    <span class="step-number">2</span>
+                    <strong>Visual Inspection:</strong> Check for damage, corrosion, discoloration, or signs of overheating. Inspect cable terminations and bus bars.
+                </div>
+                <div class="step">
+                    <span class="step-number">3</span>
+                    <strong>Thermal Scan:</strong> Perform infrared thermography on live equipment (if qualified). Document hot spots exceeding baseline by 40°F.
+                </div>
+                <div class="step">
+                    <span class="step-number">4</span>
+                    <strong>De-energize:</strong> Execute LOTO procedure. Verify zero energy with CAT-rated meter and non-contact tester.
+                </div>
+                <div class="step">
+                    <span class="step-number">5</span>
+                    <strong>Cleaning:</strong> Vacuum dust and debris. Clean contacts with approved solvent. Inspect for tracking or carbon deposits.
+                </div>
+                <div class="step">
+                    <span class="step-number">6</span>
+                    <strong>Connections:</strong> Check torque on all terminations per manufacturer specs (typically 75-85% of rated value). Tighten bolted connections.
+                </div>
+                <div class="step">
+                    <span class="step-number">7</span>
+                    <strong>Testing:</strong> Perform insulation resistance test (min 2 MΩ). Test overcurrent devices and protective relays.
+                </div>
+                <div class="step">
+                    <span class="step-number">8</span>
+                    <strong>Restoration:</strong> Replace covers and safety barriers. Remove LOTO devices. Energize and verify normal operation.
+                </div>
+            </div>
+            
+            <div class="card">
+                <h3>Variable Frequency Drive (VFD) Troubleshooting</h3>
+                <div class="step">
+                    <span class="step-number">1</span>
+                    <strong>Fault Identification:</strong> Record fault code from display. Document when fault occurred and operating conditions.
+                </div>
+                <div class="step">
+                    <span class="step-number">2</span>
+                    <strong>Input Power Check:</strong> Verify three-phase voltage balance (within 2%). Check for voltage sags, swells, or harmonics.
+                </div>
+                <div class="step">
+                    <span class="step-number">3</span>
+                    <strong>Control Signals:</strong> Test 4-20mA or 0-10V command signals. Verify digital inputs using multimeter or PLC diagnostics.
+                </div>
+                <div class="step">
+                    <span class="step-number">4</span>
+                    <strong>Output Verification:</strong> Measure motor voltage and current. Check for phase loss or imbalance exceeding 10%.
+                </div>
+                <div class="step">
+                    <span class="step-number">5</span>
+                    <strong>Cooling System:</strong> Inspect fans for proper operation. Clean heat sinks and verify adequate airflow (check intake/exhaust temperatures).
+                </div>
+                <div class="step">
+                    <span class="step-number">6</span>
+                    <strong>Parameter Review:</strong> Compare current parameters with baseline configuration. Reset to factory defaults if corruption suspected.
+                </div>
+                <div class="step">
+                    <span class="step-number">7</span>
+                    <strong>Component Testing:</strong> If fault persists, test DC bus capacitors, IGBTs, and gate driver circuits with appropriate equipment.
+                </div>
+            </div>
+            
+            <div class="warning">
+                VFD capacitors can retain lethal voltage for up to 15 minutes after power removal. Always wait appropriate discharge time and verify with meter before contact.
+            </div>
+            
+            <div class="card">
+                <h3>Emergency Response Procedure</h3>
+                <div class="step">
+                    <span class="step-number">1</span>
+                    <strong>Assess Situation:</strong> Determine if safe to approach. Check for fire, arc flash, or continuing electrical hazard.
+                </div>
+                <div class="step">
+                    <span class="step-number">2</span>
+                    <strong>Alert Others:</strong> Activate emergency alarm. Call emergency number. Request medical assistance if injuries present.
+                </div>
+                <div class="step">
+                    <span class="step-number">3</span>
+                    <strong>De-energize:</strong> If safe, open main disconnect or circuit breaker. Do not touch victim if still in contact with energized conductor.
+                </div>
+                <div class="step">
+                    <span class="step-number">4</span>
+                    <strong>Secure Area:</strong> Establish safety perimeter. Prevent unauthorized entry. Keep personnel away from energized equipment.
+                </div>
+                <div class="step">
+                    <span class="step-number">5</span>
+                    <strong>First Aid:</strong> If trained and safe, provide CPR or AED. Treat burns with sterile dressings. Do not move victim unless immediate danger.
+                </div>
+                <div class="step">
+                    <span class="step-number">6</span>
+                    <strong>Investigation:</strong> Preserve scene for incident investigation. Do not restore power until authorized by safety personnel.
+                </div>
+            </div>
+        </div>
+        
+        <div id="terminology" class="content-section">
+            <h2>Electrical Terminology & Acronyms</h2>
+            
+            <div class="card">
+                <h3>Safety & Procedures</h3>
+                <ul>
+                    <li><strong>LOTO:</strong> Lockout/Tagout - Energy isolation procedure to prevent accidental equipment startup</li>
+                    <li><strong>PPE:</strong> Personal Protective Equipment - Safety gear required for electrical work</li>
+                    <li><strong>Arc Flash:</strong> Explosive release of energy from electrical fault, creating extreme heat and pressure</li>
+                    <li><strong>NFPA 70E:</strong> Standard for Electrical Safety in the Workplace</li>
+                    <li><strong>CAT Rating:</strong> Category rating for test equipment (CAT II, III, IV) indicating safe voltage levels</li>
+                    <li><strong>Qualified Person:</strong> Worker trained to identify and avoid electrical hazards per OSHA/NFPA</li>
+                    <li><strong>Energized Work Permit:</strong> Authorization required for working on live electrical equipment</li>
+                    <li><strong>Flash Protection Boundary:</strong> Distance where arc flash PPE is required (typically 4 feet)</li>
+                </ul>
+            </div>
+            
+            <div class="card">
+                <h3>Equipment & Components</h3>
+                <ul>
+                    <li><strong>MCC:</strong> Motor Control Center - Centralized assembly of motor starters and controls</li>
+                    <li><strong>VFD:</strong> Variable Frequency Drive - Controls motor speed by varying frequency and voltage</li>
+                    <li><strong>PLC:</strong> Programmable Logic Controller - Industrial computer for automation control</li>
+                    <li><strong>HMI:</strong> Human Machine Interface - Touchscreen/display for operator interaction</li>
+                    <li><strong>SCADA:</strong> Supervisory Control and Data Acquisition - System for monitoring/controlling processes</li>
+                    <li><strong>UPS:</strong> Uninterruptible Power Supply - Battery backup for critical systems</li>
+                    <li><strong>Contactor:</strong> Electrically controlled switch for high-power circuits</li>
+                    <li><strong>Overload Relay:</strong> Protective device that trips on excessive current over time</li>
+                    <li><strong>OCPD:</strong> Overcurrent Protection Device - Circuit breakers, fuses protecting circuits</li>
+                    <li><strong>GFCI:</strong> Ground Fault Circuit Interrupter - Detects ground faults and trips quickly</li>
+                    <li><strong>CT:</strong> Current Transformer - Measures high currents by stepping down to measurable levels</li>
+                    <li><strong>PT/VT:</strong> Potential/Voltage Transformer - Steps down high voltage for metering</li>
+                </ul>
+            </div>
+            
+            <div class="card">
+                <h3>Electrical Terms</h3>
+                <ul>
+                    <li><strong>Ampacity:</strong> Maximum current a conductor can carry continuously without exceeding temperature rating</li>
+                    <li><strong>Voltage Drop:</strong> Reduction in voltage along conductor length due to resistance</li>
+                    <li><strong>Power Factor:</strong> Ratio of real power to apparent power (cosine of phase angle)</li>
+                    <li><strong>Harmonics:</strong> Frequencies that are multiples of fundamental frequency causing distortion</li>
+                    <li><strong>Inrush Current:</strong> Initial surge of current when energizing inductive loads (6-8x normal)</li>
+                    <li><strong>FLA:</strong> Full Load Amps - Current drawn by motor at rated load</li>
+                    <li><strong>LRA:</strong> Locked Rotor Amps - Starting current with rotor not turning</li>
+                    <li><strong>Service Factor:</strong> Multiplier indicating allowable motor overload (typically 1.15)</li>
+                    <li><strong>Duty Cycle:</strong> Percentage of time equipment operates vs. rest period</li>
+                    <li><strong>Short Circuit:</strong> Low-resistance path between conductors causing excessive current</li>
+                    <li><strong>Ground Fault:</strong> Unintended current path to ground or grounded surfaces</li>
+                    <li><strong>Impedance:</strong> Total opposition to current flow in AC circuits (resistance + reactance)</li>
+                </ul>
+            </div>
+            
+            <div class="card">
+                <h3>Testing & Maintenance</h3>
+                <ul>
+                    <li><strong>Megger:</strong> Megohmmeter - Tests insulation resistance (typically 1000V or 2500V)</li>
+                    <li><strong>TRMS:</strong> True Root Mean Square - Accurate AC measurement for non-sinusoidal waveforms</li>
+                    <li><strong>Hi-Pot Test:</strong> High Potential test verifying insulation can withstand voltage</li>
+                    <li><strong>IR Test:</strong> Insulation Resistance test - Minimum 2 MΩ typically acceptable</li>
+                    <li><strong>Thermography:</strong> Infrared imaging to detect hot spots and loose connections</li>
+                    <li><strong>PM:</strong> Preventive Maintenance - Scheduled inspections to prevent failures</li>
+                    <li><strong>PdM:</strong> Predictive Maintenance - Condition monitoring to predict failures</li>
+                    <li><strong>RCM:</strong> Reliability Centered Maintenance - Strategy focused on critical equipment</li>
+                    <li><strong>MTBF:</strong> Mean Time Between Failures - Average time equipment runs before failure</li>
+                    <li><strong>MTTR:</strong> Mean Time To Repair - Average time to restore equipment to operation</li>
+                </ul>
+            </div>
+            
+            <div class="card">
+                <h3>Codes & Standards</h3>
+                <ul>
+                    <li><strong>NEC:</strong> National Electrical Code (NFPA 70) - Installation standards updated every 3 years</li>
+                    <li><strong>AHJ:</strong> Authority Having Jurisdiction - Local inspector/official enforcing codes</li>
+                    <li><strong>UL:</strong> Underwriters Laboratories - Product safety testing and certification</li>
+                    <li><strong>NEMA:</strong> National Electrical Manufacturers Association - Equipment standards</li>
+                    <li><strong>IEEE:</strong> Institute of Electrical and Electronics Engineers - Technical standards</li>
+                    <li><strong>ANSI:</strong> American National Standards Institute - Oversees standards development</li>
+                    <li><strong>IEC:</strong> International Electrotechnical Commission - Global electrical standards</li>
+                    <li><strong>IP Rating:</strong> Ingress Protection rating for enclosure sealing (dust/water)</li>
+                </ul>
+            </div>
+            
+            <div class="card">
+                <h3>Communication Protocols</h3>
+                <ul>
+                    <li><strong>Modbus:</strong> Serial communication protocol (RTU/ASCII) common in industrial automation</li>
+                    <li><strong>Ethernet/IP:</strong> Industrial protocol using standard Ethernet for real-time control</li>
+                    <li><strong>Profibus:</strong> Process fieldbus - German standard for factory automation</li>
+                    <li><strong>DeviceNet:</strong> CAN-based network for connecting industrial devices</li>
+                    <li><strong>4-20mA:</strong> Analog current loop standard for transmitter signals</li>
+                    <li><strong>0-10VDC:</strong> Analog voltage signal standard for control</li>
+                    <li><strong>Dry Contact:</strong> Switch contact with no voltage (relay output)</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div id="faults" class="content-section">
+            <h2>Common Faults & Solutions</h2>
+            
+            <div class="card">
+                <h3>Motor Will Not Start</h3>
+                <div class="warning">Verify LOTO before troubleshooting. Check for active permits.</div>
+                <ul>
+                    <li><strong>No Control Voltage:</strong> Check control transformer fuses. Measure 120V or 24V at control circuit. Replace blown fuses and investigate cause.</li>
+                    <li><strong>Overload Tripped:</strong> Reset overload relay. Check for mechanical binding or excessive load. Verify motor amp draw against nameplate FLA.</li>
+                    <li><strong>E-Stop Activated:</strong> Locate and reset all emergency stop buttons in circuit. Verify auxiliary contacts closed.</li>
+                    <li><strong>Interlock Open:</strong> Check safety interlocks, door switches, guard switches. Verify all permissive conditions met.</li>
+                    <li><strong>Failed Contactor:</strong> Test coil resistance (typically 100-500Ω). Check for mechanical binding. Replace if contacts welded or burned.</li>
+                    <li><strong>Loose Connection:</strong> Inspect all terminals for tightness. Look for discoloration indicating overheating. Torque to specifications.</li>
+                </ul>
+            </div>
+            
+            <div class="card">
+                <h3>Circuit Breaker Trips Repeatedly</h3>
+                <ul>
+                    <li><strong>Overload Condition:</strong> Calculate actual load vs breaker rating. Check for added equipment. Verify wire ampacity matches breaker.</li>
+                    <li><strong>Short Circuit:</strong> Use megohmmeter to test insulation downstream. Disconnect loads one at a time to isolate fault. Check for damaged cable.</li>
+                    <li><strong>Ground Fault:</strong> Test each phase-to-ground with megger (min 1 MΩ). Look for moisture, damaged insulation, or grounded conductors.</li>
+                    <li><strong>Loose Connection:</strong> Thermography scan for hot spots. Check breaker terminal tightness. Inspect bus bar connections.</li>
+                    <li><strong>Breaker Failure:</strong> Test breaker operation curve. Check for internal damage or worn contacts. Replace if trip characteristics outside specs.</li>
+                    <li><strong>Nuisance Tripping:</strong> Verify breaker type matches load (motor-rated for inductive). Check for VFD harmonics causing false trips.</li>
+                </ul>
+            </div>
+            
+            <div class="card">
+                <h3>VFD Faults</h3>
+                <ul>
+                    <li><strong>Overcurrent Fault:</strong> Check motor for mechanical binding or overload. Verify acceleration/deceleration times not too aggressive. Inspect motor cables for shorts.</li>
+                    <li><strong>Overvoltage Fault:</strong> Check decel time - motor regenerating energy. Verify line voltage not excessive. Add braking resistor if needed for high-inertia loads.</li>
+                    <li><strong>Overtemperature:</strong> Clean heat sinks and fans. Verify ambient temperature within specs (typically <40°C). Check for adequate ventilation clearances (6 inches minimum).</li>
+                    <li><strong>Ground Fault:</strong> Megger test motor and cables phase-to-ground. Check for moisture in motor junction box. Inspect cable damage in cable tray.</li>
+                    <li><strong>Phase Loss:</strong> Verify three-phase input voltage balanced within 2%. Check input fuses/disconnect. Test line reactor if installed.</li>
+                    <li><strong>Communication Loss:</strong> Check network cable continuity and termination. Verify IP address/baud rate settings. Test with known-good cable.</li>
+                    <li><strong>DC Bus Fault:</strong> Test DC bus capacitors with ESR meter. Check rectifier diodes. Measure DC bus voltage (typically 1.35 × line voltage).</li>
+                </ul>
+            </div>
+            
+            <div class="card">
+                <h3>Motor Running Problems</h3>
+                <ul>
+                    <li><strong>Motor Overheating:</strong> Verify voltage within ±10% of nameplate. Check phase balance (<5% imbalance). Clean motor exterior and verify cooling fan operation. Check bearing condition.</li>
+                    <li><strong>Excessive Vibration:</strong> Check coupling alignment (within 0.002 inches). Verify soft foot condition (<0.002 inches). Inspect for bent shaft or unbalanced rotor. Check bearing wear.</li>
+                    <li><strong>Noisy Operation:</strong> Bearing noise indicates lubrication issue or wear. Electrical noise may indicate rotor bar damage or air gap problems. Mechanical noise suggests coupling/alignment issues.</li>
+                    <li><strong>Wrong Direction:</strong> Swap any two motor leads at starter. Verify phase rotation with phase rotation meter if multiple motors affected.</li>
+                    <li><strong>Low Speed/Torque:</strong> Check voltage under load. Single-phasing condition if two legs measure voltage, one doesn't. Verify no mechanical binding or excessive load.</li>
+                </ul>
+            </div>
+            
+            <div class="card">
+                <h3>Control Circuit Issues</h3>
+                <ul>
+                    <li><strong>Relay Chattering:</strong> Low control voltage - check transformer loading and connections. Dirty contacts causing resistance. Coil failing - test resistance and replace.</li>
+                    <li><strong>Indicator Lights Not Working:</strong> Replace bulb/LED. Check voltage at lamp socket. Verify transformer supplying light circuit. Check selector switch position.</li>
+                    <li><strong>Push Button Not Responding:</strong> Clean contacts with contact cleaner. Check wiring terminations. Test contact continuity when actuated. Replace if mechanically damaged.</li>
+                    <li><strong>Timer Not Timing:</strong> Verify correct voltage at terminals. Check if mechanical or electronic type. Test with known good timer. Review parameter settings.</li>
+                    <li><strong>PLC Output Not Working:</strong> Check fuse on output card. Verify program logic commanding output ON. Test output with voltmeter. Check field wiring to device.</li>
+                </ul>
+            </div>
+            
+            <div class="card">
+                <h3>Power Quality Issues</h3>
+                <ul>
+                    <li><strong>Lights Flickering:</strong> Loose neutral connection - priority safety issue. Check main service and panel neutrals. Verify ground rod connections. Large motor starting may cause voltage sag.</li>
+                    <li><strong>Equipment Resets Randomly:</strong> Check for voltage sags/swells with power quality analyzer. Verify UPS operation if critical loads. Look for loose connections causing intermittent power loss.</li>
+                    <li><strong>Harmonics Issues:</strong> Install harmonic filters on VFD supplies. Check for overheated neutrals (triplen harmonics). Use K-rated transformers for harmonic loads. Verify system not overloaded.</li>
+                    <li><strong>Low Power Factor:</strong> Install power factor correction capacitors. Check for failed capacitors in existing banks. Verify not leading power factor (over-correction).</li>
+                </ul>
+            </div>
+            
+            <div class="card">
+                <h3>Transformer Problems</h3>
+                <ul>
+                    <li><strong>Overheating:</strong> Check load - may be overloaded (>100% nameplate). Verify cooling fans operational. Check for blocked ventilation. Measure winding temperatures with IR camera.</li>
+                    <li><strong>Humming/Buzzing:</strong> Normal at low levels. Excessive noise indicates loose laminations or mounting. Check for harmonic loads causing vibration. Tighten mounting bolts.</li>
+                    <li><strong>Low Output Voltage:</strong> Check input voltage. Verify tap settings correct. Calculate voltage drop in secondary cables. Check for shorted turns (requires testing).</li>
+                    <li><strong>Oil Leaks:</strong> Check gaskets and bushings. Low oil level risks overheating. Requires shutdown and professional service. Monitor oil level and temperature closely.</li>
+                </ul>
+            </div>
+            
+            <div class="safety">
+                <strong>Troubleshooting Safety Reminder:</strong> Always follow LOTO procedures. Verify zero energy state before contact. Use appropriate PPE for voltage level. When in doubt, consult senior technician or engineer. Document all findings and repairs.
+            </div>
+        </div>
+        
+        <div id="calculations" class="content-section">
+            <h2>Calculations & Formulas</h2>
+            
+            <div class="card">
+                <h3>Ohm's Law & Power</h3>
+                <ul>
+                    <li><strong>Voltage:</strong> V = I × R (Volts = Amps × Ohms)</li>
+                    <li><strong>Current:</strong> I = V ÷ R (Amps = Volts ÷ Ohms)</li>
+                    <li><strong>Resistance:</strong> R = V ÷ I (Ohms = Volts ÷ Amps)</li>
+                    <li><strong>Power (DC/Single Phase):</strong> P = V × I (Watts = Volts × Amps)</li>
+                    <li><strong>Power (AC Single Phase):</strong> P = V × I × PF (Real Power in Watts)</li>
+                    <li><strong>Power (Three Phase):</strong> P = √3 × V × I × PF</li>
+                    <li><strong>Power (Three Phase):</strong> P = 1.732 × V × I × PF (using 1.732 for √3)</li>
+                    <li><strong>Apparent Power:</strong> S = V × I (VA - Volt-Amperes)</li>
+                    <li><strong>Reactive Power:</strong> Q = V × I × sin(θ) (VAR - Volt-Amperes Reactive)</li>
+                </ul>
+            </div>
+            
+            <div class="card">
+                <h3>Motor Calculations</h3>
+                <ul>
+                    <li><strong>Motor HP to kW:</strong> kW = HP × 0.746</li>
+                    <li><strong>Motor kW to HP:</strong> HP = kW × 1.34</li>
+                    <li><strong>Motor Full Load Current (3φ):</strong> FLA = (HP × 746) ÷ (√3 × V × Eff × PF)</li>
+                    <li><strong>Quick Motor FLA (3φ, 460V):</strong> FLA ≈ HP × 1.25 (rough estimate)</li>
+                    <li><strong>Quick Motor FLA (3φ, 230V):</strong> FLA ≈ HP × 2.5 (rough estimate)</li>
+                    <li><strong>Motor Starting Current:</strong> Inrush = FLA × 6 to 8 (across-the-line start)</li>
+                    <li><strong>Motor Synchronous Speed:</strong> RPM = (120 × Frequency) ÷ Number of Poles</li>
+                    <li><strong>Motor Slip:</strong> Slip % = [(Sync Speed - Actual Speed) ÷ Sync Speed] × 100</li>
+                    <li><strong>Motor Efficiency:</strong> Eff % = (Output Power ÷ Input Power) × 100</li>
+                    <li><strong>Motor Torque:</strong> Torque (lb-ft) = (HP × 5252) ÷ RPM</li>
+                </ul>
+            </div>
+            
+            <div class="card">
+                <h3>Voltage Drop Calculations</h3>
+                <ul>
+                    <li><strong>Voltage Drop (Single Phase):</strong> VD = (2 × K × I × L) ÷ CM</li>
+                    <li><strong>Voltage Drop (Three Phase):</strong> VD = (1.732 × K × I × L) ÷ CM</li>
+                    <li><strong>Where:</strong> K = 12.9 for copper, 21.2 for aluminum</li>
+                    <li><strong>Where:</strong> I = Current in Amps, L = One-way length in feet, CM = Circular Mils</li>
+                    <li><strong>Voltage Drop %:</strong> VD% = (Voltage Drop ÷ Supply Voltage) × 100</li>
+                    <li><strong>NEC Recommendation:</strong> Combined feeder + branch VD should not exceed 5%</li>
+                    <li><strong>Common Practice:</strong> Feeder max 2%, Branch max 3%</li>
+                    <li><strong>Circular Mils:</strong> CM = (Wire Diameter in mils)²</li>
+                </ul>
+            </div>
+            
+            <div class="card">
+                <h3>Conductor Sizing</h3>
+                <ul>
+                    <li><strong>Wire Size for Continuous Load:</strong> Size for 125% of load current</li>
+                    <li><strong>Motor Circuit Conductors:</strong> Size for 125% of motor FLA (NEC 430.22)</li>
+                    <li><strong>Feeder for Multiple Motors:</strong> 125% of largest motor FLA + 100% of others</li>
+                    <li><strong>Parallel Conductors:</strong> Each conductor must be same length, size, material, insulation</li>
+                    <li><strong>Temperature Correction:</strong> Derate ampacity for ambient temp >30°C (86°F)</li>
+                    <li><strong>Conduit Fill Adjustment:</strong> Derate for more than 3 current-carrying conductors</li>
+                    <li><strong>Common Derating:</strong> 4-6 conductors = 80%, 7-9 = 70%, 10-20 = 50%</li>
+                </ul>
+            </div>
+            
+            <div class="card">
+                <h3>Overcurrent Protection</h3>
+                <ul>
+                    <li><strong>Branch Circuit OCPD:</strong> Not more than conductor ampacity (with exceptions)</li>
+                    <li><strong>Motor Branch Circuit:</strong> Up to 250% of motor FLA for inverse time breaker</li>
+                    <li><strong>Motor Branch Circuit:</strong> Up to 175% of motor FLA for instantaneous trip breaker</li>
+                    <li><strong>Overload Relay Setting:</strong> 115% to 125% of motor nameplate FLA</li>
+                    <li><strong>Service Factor >1.15:</strong> Overload can be set up to 125% FLA</li>
+                    <li><strong>Continuous Load:</strong> OCPD rated at least 125% of continuous load</li>
+                </ul>
+            </div>
+            
+            <div class="card">
+                <h3>Transformer Calculations</h3>
+                <ul>
+                    <li><strong>Transformer kVA (Single Phase):</strong> kVA = (V × I) ÷ 1000</li>
+                    <li><strong>Transformer kVA (Three Phase):</strong> kVA = (√3 × V × I) ÷ 1000</li>
+                    <li><strong>Primary Current (Single Phase):</strong> I₁ = (kVA × 1000) ÷ V₁</li>
+                    <li><strong>Primary Current (Three Phase):</strong> I₁ = (kVA × 1000) ÷ (√3 × V₁)</li>
+                    <li><strong>Secondary Current (Single Phase):</strong> I₂ = (kVA × 1000) ÷ V₂</li>
+                    <li><strong>Secondary Current (Three Phase):</strong> I₂ = (kVA × 1000) ÷ (√3 × V₂)</li>
+                    <li><strong>Turns Ratio:</strong> N₁/N₂ = V₁/V₂ = I₂/I₁</li>
+                    <li><strong>Transformer % Impedance:</strong> %Z = (Voltage Drop at Full Load ÷ Rated Voltage) × 100</li>
+                    <li><strong>Short Circuit Current:</strong> Isc = (kVA × 1000) ÷ (√3 × V × %Z)</li>
+                </ul>
+            </div>
+            
+            <div class="card">
+                <h3>Conduit & Raceway Fill</h3>
+                <ul>
+                    <li><strong>1 Conductor:</strong> Maximum 53% conduit fill</li>
+                    <li><strong>2 Conductors:</strong> Maximum 31% conduit fill</li>
+                    <li><strong>3+ Conductors:</strong> Maximum 40% conduit fill</li>
+                    <li><strong>Cable Area:</strong> Use Chapter 9, Table 5 for conductor dimensions</li>
+                    <li><strong>Conduit Area:</strong> Use Chapter 9, Table 4 for conduit internal area</li>
+                    <li><strong>Fill Calculation:</strong> (Total Cable Area ÷ Conduit Area) × 100 = Fill %</li>
+                    <li><strong>Nipples (24" or less):</strong> Can fill up to 60%</li>
+                </ul>
+            </div>
+            
+            <div class="card">
+                <h3>Power Factor & Reactive Power</h3>
+                <ul>
+                    <li><strong>Power Factor:</strong> PF = Real Power (kW) ÷ Apparent Power (kVA)</li>
+                    <li><strong>Power Factor:</strong> PF = cos(θ) where θ is phase angle</li>
+                    <li><strong>Reactive Power:</strong> kVAR = kVA × sin(θ)</li>
+                    <li><strong>Reactive Power:</strong> kVAR = √(kVA² - kW²)</li>
+                    <li><strong>Power Triangle:</strong> kVA² = kW² + kVAR²</li>
+                    <li><strong>Capacitor kVAR Needed:</strong> kVAR = kW × (tan θ₁ - tan θ₂)</li>
+                    <li><strong>Where:</strong> θ₁ = existing PF angle, θ₂ = desired PF angle</li>
+                    <li><strong>Current Reduction:</strong> New I = Old I × (Old PF ÷ New PF)</li>
+                </ul>
+            </div>
+            
+            <div class="card">
+                <h3>Grounding & Bonding</h3>
+                <ul>
+                    <li><strong>Equipment Grounding Conductor:</strong> Sized per NEC Table 250.122</li>
+                    <li><strong>Rule of Thumb:</strong> EGC generally 2 sizes smaller than phase conductors</li>
+                    <li><strong>Grounding Electrode Conductor:</strong> Sized per NEC Table 250.66</li>
+                    <li><strong>Ground Rod Resistance:</strong> Maximum 25 ohms to earth</li>
+                    <li><strong>Ground Fault Current:</strong> Iₘ = V ÷ (Zₛ + Zₑ + Zf)</li>
+                    <li><strong>Touch Voltage:</strong> Vtouch = Ifault × Rfoot-to-hand</li>
+                    <li><strong>Step Voltage:</strong> Vstep = Ifault × Rfoot-to-foot</li>
+                </ul>
+            </div>
+            
+            <div class="card">
+                <h3>Short Circuit & Arc Flash</h3>
+                <ul>
+                    <li><strong>Available Fault Current:</strong> Isc = kVA ÷ (√3 × V × %Z)</li>
+                    <li><strong>Arc Flash Incident Energy:</strong> Requires IEEE 1584 calculations (use software)</li>
+                    <li><strong>Arc Flash Boundary:</strong> Distance where incident energy = 1.2 cal/cm²</li>
+                    <li><strong>Working Distance:</strong> Typical values - 15kV: 36", 5kV: 24", 480V: 18"</li>
+                    <li><strong>Bolted Fault Current:</strong> If = V ÷ Z (impedance to fault point)</li>
+                    <li><strong>Let-Through Current:</strong> Depends on OCPD type and clearing time</li>
+                </ul>
+            </div>
+            
+            <div class="warning">
+                These formulas are for reference only. Always verify calculations with engineering standards and use appropriate safety factors. For arc flash calculations, use IEEE 1584 compliant software.
+            </div>
+        </div>
+        
+        <div id="codes" class="content-section">
+            <h2>Code Reference - NEC & NFPA 70E</h2>
+            
+            <div class="card">
+                <h3>NEC Key Articles - Wiring Methods</h3>
+                <ul>
+                    <li><strong>Article 90:</strong> Introduction - Code scope, arrangement, enforcement</li>
+                    <li><strong>Article 100:</strong> Definitions - Essential electrical terms</li>
+                    <li><strong>Article 110:</strong> Requirements for Electrical Installations - General safety rules</li>
+                    <li><strong>Article 110.14(C):</strong> Temperature limitations - 75°C terminations standard</li>
+                    <li><strong>Article 200:</strong> Grounded Conductors - Neutral identification (white/gray)</li>
+                    <li><strong>Article 210:</strong> Branch Circuits - Ratings, loads, outlets, GFCI requirements</li>
+                    <li><strong>Article 215:</strong> Feeders - Minimum size and rating requirements</li>
+                    <li><strong>Article 220:</strong> Branch Circuit, Feeder & Service Load Calculations</li>
+                    <li><strong>Article 225:</strong> Outside Branch Circuits and Feeders</li>
+                    <li><strong>Article 230:</strong> Services - Overhead and underground service requirements</li>
+                </ul>
+            </div>
+            
+            <div class="card">
+                <h3>NEC Key Articles - Equipment</h3>
+                <ul>
+                    <li><strong>Article 240:</strong> Overcurrent Protection - Breakers, fuses, sizing rules</li>
+                    <li><strong>Article 250:</strong> Grounding & Bonding - Critical safety requirements</li>
+                    <li><strong>Article 250.122:</strong> Equipment grounding conductor sizing table</li>
+                    <li><strong>Article 280:</strong> Surge Protective Devices (SPD)</li>
+                    <li><strong>Article 300:</strong> General Requirements for Wiring Methods</li>
+                    <li><strong>Article 310:</strong> Conductors for General Wiring - Ampacity tables</li>
+                    <li><strong>Article 312:</strong> Cabinets, Cutout Boxes, and Meter Socket Enclosures</li>
+                    <li><strong>Article 314:</strong> Outlet, Device, Pull and Junction Boxes</li>
+                    <li><strong>Article 430:</strong> Motors, Motor Circuits, and Controllers</li>
+                    <li><strong>Article 450:</strong> Transformers and Transformer Vaults</li>
+                </ul>
+            </div>
+            
+            <div class="card">
+                <h3>NEC Article 430 - Motors (Critical Sections)</h3>
+                <ul>
+                    <li><strong>430.6:</strong> Use nameplate values for motor calculations</li>
+                    <li><strong>430.22:</strong> Conductors supplying single motor - 125% of FLA</li>
+                    <li><strong>430.24:</strong> Feeder conductors - 125% largest + 100% others</li>
+                    <li><strong>430.32:</strong> Overload protection - 115% to 125% of nameplate FLA</li>
+                    <li><strong>430.52:</strong> Branch circuit short circuit protection - 250% max for breakers</li>
+                    <li><strong>430.62:</strong> Rating or setting of motor branch circuit OCPD</li>
+                    <li><strong>430.72:</strong> Motor controller must disconnect motor from all sources</li>
+                    <li><strong>430.102:</strong> Location of motor disconnecting means - in sight</li>
+                    <li><strong>Table 430.250:</strong> Full Load Current tables - three phase motors</li>
+                </ul>
+            </div>
+            
+            <div class="card">
+                <h3>NEC Article 250 - Grounding (Critical Sections)</h3>
+                <ul>
+                    <li><strong>250.4:</strong> General requirements for grounding and bonding</li>
+                    <li><strong>250.50:</strong> Grounding electrode system requirements</li>
+                    <li><strong>250.52:</strong> Types of grounding electrodes (rods, plates, etc.)</li>
+                    <li><strong>250.53:</strong> Ground rod installation - 8 ft minimum depth</li>
+                    <li><strong>250.66:</strong> Grounding electrode conductor sizing table</li>
+                    <li><strong>250.102:</strong> Bonding jumpers and conductors</li>
+                    <li><strong>250.118:</strong> Types of equipment grounding conductors</li>
+                    <li><strong>250.122:</strong> Equipment grounding conductor sizing table</li>
+                    <li><strong>250.146:</strong> Connecting receptacle grounding terminal to box</li>
+                </ul>
+            </div>
+            
+            <div class="card">
+                <h3>NEC Conduit Articles</h3>
+                <ul>
+                    <li><strong>Article 342:</strong> IMC - Intermediate Metal Conduit</li>
+                    <li><strong>Article 344:</strong> RMC - Rigid Metal Conduit</li>
+                    <li><strong>Article 348:</strong> FMC - Flexible Metal Conduit</li>
+                    <li><strong>Article 350:</strong> LFMC - Liquid-tight Flexible Metal Conduit</li>
+                    <li><strong>Article 352:</strong> PVC - Rigid Polyvinyl Chloride Conduit</li>
+                    <li><strong>Article 356:</strong> LFNC - Liquid-tight Flexible Nonmetallic Conduit</li>
+                    <li><strong>Article 358:</strong> EMT - Electrical Metallic Tubing</li>
+                    <li><strong>Article 392:</strong> Cable Trays</li>
+                </ul>
+            </div>
+            
+            <div class="card">
+                <h3>NFPA 70E - Electrical Safety (2024 Edition)</h3>
+                <ul>
+                    <li><strong>Article 100:</strong> Definitions - Arc flash, qualified person, etc.</li>
+                    <li><strong>Article 110:</strong> General Requirements for Electrical Safety</li>
+                    <li><strong>110.1:</strong> Scope - applies to workplaces with electrical hazards</li>
+                    <li><strong>110.2:</strong> Training requirements for qualified and unqualified persons</li>
+                    <li><strong>Article 120:</strong> Establishing an Electrically Safe Work Condition</li>
+                    <li><strong>120.1:</strong> Process of creating electrically safe condition</li>
+                    <li><strong>120.2:</strong> De-energized electrical conductors and circuit parts</li>
+                    <li><strong>120.5:</strong> Lockout/Tagout procedures and requirements</li>
+                    <li><strong>Article 130:</strong> Work Involving Electrical Hazards</li>
+                    <li><strong>130.2:</strong> Approach boundaries to energized electrical conductors</li>
+                    <li><strong>130.4:</strong> Arc flash risk assessment requirements</li>
+                    <li><strong>130.5:</strong> Arc-rated clothing and PPE requirements</li>
+                    <li><strong>130.7:</strong> Personal protective equipment (PPE) selection</li>
+                </ul>
+            </div>
+            
+            <div class="card">
+                <h3>NFPA 70E PPE Categories</h3>
+                <ul>
+                    <li><strong>Category 1:</strong> 4 cal/cm² minimum - AR shirt and pants or coverall</li>
+                    <li><strong>Category 2:</strong> 8 cal/cm² minimum - AR shirt/pants + AR flash suit or coverall</li>
+                    <li><strong>Category 3:</strong> 25 cal/cm² minimum - AR flash suit, AR shirt/pants</li>
+                    <li><strong>Category 4:</strong> 40 cal/cm² minimum - AR flash suit, AR shirt/pants, multilayer</li>
+                    <li><strong>All Categories Require:</strong> Arc-rated face shield or hood, safety glasses, hearing protection, leather gloves, leather work shoes</li>
+                    <li><strong>Voltage-Rated Gloves:</strong> Required when within restricted approach boundary</li>
+                </ul>
+            </div>
+            
+            <div class="card">
+                <h3>NFPA 70E Approach Boundaries (AC Systems)</h3>
+                <ul>
+                    <li><strong>Limited Approach (50-300V):</strong> 3 ft 6 in - unqualified persons stop here</li>
+                    <li><strong>Limited Approach (301-750V):</strong> 3 ft 6 in</li>
+                    <li><strong>Restricted Approach (50-300V):</strong> Avoid contact - voltage rated gloves required</li>
+                    <li><strong>Restricted Approach (301-750V):</strong> 1 ft 0 in</li>
+                    <li><strong>Prohibited Approach:</strong> Only for specially trained, authorized personnel</li>
+                    <li><strong>Arc Flash Boundary:</strong> Distance where incident energy = 1.2 cal/cm²</li>
+                </ul>
+            </div>
+            
+            <div class="card">
+                <h3>Common Code Violations to Avoid</h3>
+                <ul>
+                    <li><strong>Wrong Wire Size:</strong> Not accounting for temperature correction or conduit fill derating</li>
+                    <li><strong>Missing Equipment Ground:</strong> Every circuit must have equipment grounding conductor</li>
+                    <li><strong>Improper Terminations:</strong> Not torquing to specifications, using wrong lug types</li>
+                    <li><strong>Neutral as Ground:</strong> Never use neutral as equipment ground downstream of service</li>
+                    <li><strong>Wrong Breaker Size:</strong> Motor circuits require proper coordination with overloads</li>
+                    <li><strong>Box Fill Violations:</strong> Exceeding maximum number of conductors in box</li>
+                    <li><strong>Missing Disconnects:</strong> Motor disconnects must be within sight and lockable</li>
+                    <li><strong>Improper Marking:</strong> Panels must be properly labeled with circuit identification</li>
+                    <li><strong>Wrong Conductor Color:</strong> White/gray for neutral only, green/bare for ground</li>
+                    <li><strong>Wet Location Issues:</strong> Using wrong enclosure rating for environment</li>
+                </ul>
+            </div>
+            
+            <div class="safety">
+                <strong>Code Compliance Reminder:</strong> The NEC represents minimum safety standards. Always check for local amendments and stricter requirements. When in doubt, consult the actual code book or electrical engineer. The 2023 NEC is the current edition as of 2026.
+            </div>
+            
+            <div class="warning">
+                This reference summarizes key code sections but is not a substitute for the actual NEC and NFPA 70E documents. Always reference the official code books for complete requirements and exceptions.
+            </div>
+        </div>
+        
+        <div id="specs" class="content-section">
+            <h2>Equipment Specifications</h2>
+            
+            <div class="card">
+                <h3>Standard Voltage Levels - North America</h3>
+                <ul>
+                    <li><strong>Low Voltage Single Phase:</strong> 120V, 120/240V, 240V</li>
+                    <li><strong>Low Voltage Three Phase:</strong> 208Y/120V, 240V Delta, 480Y/277V, 480V Delta</li>
+                    <li><strong>Medium Voltage:</strong> 2400V, 4160V, 4800V, 6900V, 12.47kV, 13.8kV</li>
+                    <li><strong>High Voltage:</strong> 23kV, 34.5kV, 46kV, 69kV, 115kV, 138kV and above</li>
+                    <li><strong>Most Common Industrial:</strong> 480Y/277V three phase, four wire</li>
+                    <li><strong>Control Voltage:</strong> 120VAC, 24VDC, 24VAC common for control circuits</li>
+                </ul>
+            </div>
+            
+            <div class="card">
+                <h3>Standard Frequencies</h3>
+                <ul>
+                    <li><strong>North America:</strong> 60 Hz standard</li>
+                    <li><strong>Europe/Asia/Africa:</strong> 50 Hz standard (most countries)</li>
+                    <li><strong>VFD Output:</strong> 0-120 Hz typical range (can extend to 400 Hz)</li>
+                    <li><strong>Aircraft Power:</strong> 400 Hz used in aviation</li>
+                </ul>
+            </div>
+            
+            <div class="card">
+                <h3>Motor Frame Sizes (NEMA)</h3>
+                <ul>
+                    <li><strong>Fractional HP:</strong> 42, 48, 56 frames</li>
+                    <li><strong>Integral HP (143T-449T):</strong> T-frame motors (more common modern standard)</li>
+                    <li><strong>Common T-Frames:</strong> 143T, 145T, 182T, 184T, 213T, 215T, 254T, 256T, 284T, 286T, 324T, 326T, 364T, 365T, 404T, 405T, 444T, 445T</li>
+                    <li><strong>Legacy U-Frames:</strong> 143U-449U (older standard, being phased out)</li>
+                    <li><strong>Large Motors:</strong> 500+ frame sizes for industrial applications</li>
+                    <li><strong>Frame Determines:</strong> Shaft height, shaft diameter, mounting dimensions</li>
+                </ul>
+            </div>
+            
+            <div class="card">
+                <h3>Motor Enclosure Types (NEMA)</h3>
+                <ul>
+                    <li><strong>ODP:</strong> Open Drip Proof - Ventilated, for clean dry locations</li>
+                    <li><strong>TEFC:</strong> Totally Enclosed Fan Cooled - Most common industrial, external fan</li>
+                    <li><strong>TENV:</strong> Totally Enclosed Non-Ventilated - No fan, convection cooling</li>
+                    <li><strong>TEAO:</strong> Totally Enclosed Air Over - Cooled by external air movement</li>
+                    <li><strong>EXPV:</strong> Explosion Proof - Sealed, for hazardous locations</li>
+                    <li><strong>Washdown Duty:</strong> Stainless steel, sealed for food/chemical plants</li>
+                    <li><strong>Severe Duty:</strong> Extra protection for harsh industrial environments</li>
+                </ul>
+            </div>
+            
+            <div class="card">
+                <h3>Wire Ampacity Quick Reference (75°C Copper)</h3>
+                <ul>
+                    <li><strong>14 AWG:</strong> 20A (15A breaker max)</li>
+                    <li><strong>12 AWG:</strong> 25A (20A breaker max)</li>
+                    <li><strong>10 AWG:</strong> 35A (30A breaker max)</li>
+                    <li><strong>8 AWG:</strong> 50A</li>
+                    <li><strong>6 AWG:</strong> 65A</li>
+                    <li><strong>4 AWG:</strong> 85A</li>
+                    <li><strong>3 AWG:</strong> 100A</li>
+                    <li><strong>2 AWG:</strong> 115A</li>
+                    <li><strong>1 AWG:</strong> 130A</li>
+                    <li><strong>1/0 AWG:</strong> 150A</li>
+                    <li><strong>2/0 AWG:</strong> 175A</li>
+                    <li><strong>3/0 AWG:</strong> 200A</li>
+                    <li><strong>4/0 AWG:</strong> 230A</li>
+                    <li><strong>250 kcmil:</strong> 255A</li>
+                    <li><strong>300 kcmil:</strong> 285A</li>
+                    <li><strong>350 kcmil:</strong> 310A</li>
+                    <li><strong>400 kcmil:</strong> 335A</li>
+                    <li><strong>500 kcmil:</strong> 380A</li>
+                </ul>
+            </div>
+            
+            <div class="card">
+                <h3>Standard Breaker Ratings</h3>
+                <ul>
+                    <li><strong>Miniature (Branch):</strong> 15A, 20A, 25A, 30A, 35A, 40A, 45A, 50A, 60A, 70A, 80A, 90A, 100A, 110A, 125A</li>
+                    <li><strong>Molded Case:</strong> 150A, 175A, 200A, 225A, 250A, 300A, 350A, 400A, 450A, 500A, 600A</li>
+                    <li><strong>Power Circuit Breakers:</strong> 800A, 1000A, 1200A, 1600A, 2000A, 2500A, 3000A, 4000A, 5000A, 6000A</li>
+                    <li><strong>Interrupt Ratings:</strong> 10kA, 14kA, 22kA, 42kA, 65kA, 100kA, 200kA</li>
+                    <li><strong>Trip Types:</strong> Thermal-Magnetic, Electronic, Instantaneous Only</li>
+                </ul>
+            </div>
+            
+            <div class="card">
+                <h3>Fuse Types & Ratings</h3>
+                <ul>
+                    <li><strong>Class H:</strong> 250V or 600V, up to 600A, renewable (obsolete for new installs)</li>
+                    <li><strong>Class K:</strong> Time delay, 250V or 600V, up to 600A</li>
+                    <li><strong>Class RK1/RK5:</strong> Current limiting, rejection style, up to 600A</li>
+                    <li><strong>Class J:</strong> Fast acting, current limiting, 300A, 600V, 200kAIC</li>
+                    <li><strong>Class L:</strong> 601A to 6000A, current limiting, bolt-in style</li>
+                    <li><strong>Class T:</strong> Very fast, current limiting, 300V or 600V, 200kAIC</li>
+                    <li><strong>Standard Ratings:</strong> 1A, 3A, 6A, 10A, 15A, 20A, 25A, 30A, 35A, 40A, 45A, 50A, 60A, 70A, 80A, 90A, 100A, 110A, 125A, 150A, 175A, 200A, 225A, 250A, etc.</li>
+                </ul>
+            </div>
+            
+            <div class="card">
+                <h3>NEMA Enclosure Ratings</h3>
+                <ul>
+                    <li><strong>NEMA 1:</strong> Indoor, general purpose, protects against dust</li>
+                    <li><strong>NEMA 3R:</strong> Outdoor, rainproof, protects against rain/sleet</li>
+                    <li><strong>NEMA 4:</strong> Watertight, indoor/outdoor, hose-down protection</li>
+                    <li><strong>NEMA 4X:</strong> Watertight and corrosion resistant (stainless steel)</li>
+                    <li><strong>NEMA 12:</strong> Indoor, dusttight and drip-tight, general industrial</li>
+                    <li><strong>NEMA 13:</strong> Indoor, oiltight and dusttight</li>
+                    <li><strong>IP Equivalent:</strong> IP65 ≈ NEMA 4, IP66 ≈ NEMA 4X</li>
+                </ul>
+            </div>
+            
+            <div class="card">
+                <h3>Transformer Standard Ratings (kVA)</h3>
+                <ul>
+                    <li><strong>Single Phase:</strong> 5, 10, 15, 25, 37.5, 50, 75, 100, 167, 250, 333, 500 kVA</li>
+                    <li><strong>Three Phase:</strong> 15, 30, 45, 75, 112.5, 150, 225, 300, 500, 750, 1000, 1500, 2000, 2500, 3000, 5000, 7500, 10000 kVA</li>
+                    <li><strong>Common Primary:</strong> 480V Delta, 4160V, 12.47kV, 13.8kV</li>
+                    <li><strong>Common Secondary:</strong> 208Y/120V, 480Y/277V</li>
+                    <li><strong>Impedance:</strong> Typically 2.5% to 5.75% for distribution transformers</li>
+                </ul>
+            </div>
+            
+            <div class="card">
+                <h3>Conduit & Raceway Sizes</h3>
+                <ul>
+                    <li><strong>EMT/Rigid/IMC:</strong> 1/2", 3/4", 1", 1-1/4", 1-1/2", 2", 2-1/2", 3", 3-1/2", 4", 5", 6"</li>
+                    <li><strong>Flexible:</strong> 3/8", 1/2", 3/4", 1", 1-1/4", 1-1/2", 2", 2-1/2", 3", 3-1/2", 4"</li>
+                    <li><strong>Minimum Size:</strong> 1/2" for buildings (3/8" flexible for fixtures only)</li>
+                    <li><strong>Trade Size vs Actual:</strong> Trade size is nominal, actual ID varies by type</li>
+                </ul>
+            </div>
+            
+            <div class="card">
+                <h3>Battery Specifications - UPS & Emergency Systems</h3>
+                <ul>
+                    <li><strong>Lead Acid:</strong> 2.0V per cell, 6 cells = 12V battery</li>
+                    <li><strong>Float Voltage:</strong> 2.25-2.30V per cell (13.5-13.8V for 12V battery)</li>
+                    <li><strong>Common Sizes:</strong> 12V/7Ah, 12V/18Ah, 12V/35Ah, 12V/55Ah, 12V/100Ah, 12V/200Ah</li>
+                    <li><strong>String Voltage:</strong> 24V, 48V, 125VDC, 250VDC common for UPS systems</li>
+                    <li><strong>Life Expectancy:</strong> 3-5 years typical, 7-10 years for premium</li>
+                    <li><strong>Temperature Effect:</strong> Life halves for every 8°C above 25°C</li>
+                </ul>
+            </div>
+            
+            <div class="warning">
+                Always verify actual equipment specifications with manufacturer nameplates and documentation. These are general industry standards and may vary by manufacturer and application.
+            </div>
+        </div>
+        
+        <div id="maintenance" class="content-section">
+            <h2>Maintenance Schedules</h2>
+            
+            <div class="card">
+                <h3>Motors - Preventive Maintenance Schedule</h3>
+                <ul>
+                    <li><strong>Daily (During Operation):</strong> Listen for unusual noise or vibration. Check temperature with IR gun (bearing temp <80°C above ambient). Verify proper operation.</li>
+                    <li><strong>Weekly:</strong> Visual inspection for oil leaks, damaged cables, loose mounting. Check ventilation openings clear.</li>
+                    <li><strong>Monthly:</strong> Record vibration levels (trend analysis). Measure running current all phases. Check coupling alignment if accessible. Test motor temperature under load.</li>
+                    <li><strong>Quarterly:</strong> Megger test (min 100 MΩ for motors >1000V, min 1 MΩ for 460V motors). Clean motor exterior. Check grounding connections. Inspect terminal connections for tightness.</li>
+                    <li><strong>Annually:</strong> Full disassembly inspection for critical motors. Bearing lubrication (or per manufacturer schedule). Check winding resistance balance (<1% imbalance). Current signature analysis. Check shaft run-out. Inspect bearings for wear.</li>
+                    <li><strong>3-5 Years:</strong> Bearing replacement (based on hours of operation). Full rewind if insulation deteriorated.</li>
+                </ul>
+            </div>
+            
+            <div class="card">
+                <h3>Motor Control Centers (MCC) - PM Schedule</h3>
+                <ul>
+                    <li><strong>Weekly:</strong> Walk through inspection for unusual sounds, odors, or heat. Check indicator lights functioning.</li>
+                    <li><strong>Monthly:</strong> Infrared scan (energized) - note temps >40°F above ambient. Verify cooling fans operational.</li>
+                    <li><strong>Quarterly:</strong> Vacuum dust and debris (de-energized). Verify all compartment doors close properly. Check safety interlocks functional.</li>
+                    <li><strong>Semi-Annually:</strong> Inspect bus bars for discoloration. Check all terminations with torque wrench. Test ground fault protection. Clean contacts on starters/contactors.</li>
+                    <li><strong>Annually:</strong> Full electrical testing - contact resistance, overload testing, ground continuity. Exercise all breakers/switches. Tighten all connections per torque specs. Replace any deteriorated components. Update labels and drawings.</li>
+                    <li><strong>3-5 Years:</strong> Replace contactors showing wear. Replace control transformers if overheating. Update obsolete components.</li>
+                </ul>
+            </div>
+            
+            <div class="card">
+                <h3>Variable Frequency Drives (VFD) - PM Schedule</h3>
+                <ul>
+                    <li><strong>Monthly:</strong> Check fault logs and clear old alarms. Verify cooling fan operation. Check display for error codes. Record DC bus voltage.</li>
+                    <li><strong>Quarterly:</strong> Clean or replace air filters. Vacuum dust from heat sinks. Check all cable connections tight. Verify parameter backup current.</li>
+                    <li><strong>Semi-Annually:</strong> Infrared scan of connections and components. Test emergency stop circuits. Verify all setpoints correct. Check control signal quality (4-20mA, 0-10V).</li>
+                    <li><strong>Annually:</strong> Measure input/output voltage and current. Test DC bus capacitors (ESR and capacitance). Check gate driver circuits. Torque all power terminations. Replace cooling fans (5-7 year life typical).</li>
+                    <li><strong>3-5 Years:</strong> Replace electrolytic capacitors. Update firmware if available. Replace control power supply if showing signs of age.</li>
+                    <li><strong>As Needed:</strong> Parameter optimization after process changes. Software updates per manufacturer bulletins.</li>
+                </ul>
+            </div>
+            
+            <div class="card">
+                <h3>Transformers - PM Schedule</h3>
+                <ul>
+                    <li><strong>Monthly:</strong> Record load current. Check temperature gauges. Listen for abnormal noise. Inspect for oil leaks (liquid filled).</li>
+                    <li><strong>Quarterly:</strong> Infrared scan of bushings and connections. Check oil level (liquid filled). Inspect cooling fans operational. Verify ground connections intact.</li>
+                    <li><strong>Semi-Annually:</strong> Measure load vs nameplate rating. Test cooling system (fans, pumps). Check silica gel breathers (liquid filled). Inspect bushings for tracking or damage.</li>
+                    <li><strong>Annually:</strong> Insulation resistance test (min 1000 MΩ typical). Turns ratio test. Power factor test. Oil analysis (liquid filled - DGA, moisture, acidity). Check tap changer operation. Torque all connections.</li>
+                    <li><strong>3-5 Years:</strong> Winding resistance test. Dissolved gas analysis trending. Internal inspection (outage required). Replace gaskets if leaking.</li>
+                    <li><strong>5-10 Years:</strong> Oil filtration or replacement (liquid filled). Detailed internal inspection for critical units.</li>
+                </ul>
+            </div>
+            
+            <div class="card">
+                <h3>Circuit Breakers - PM Schedule</h3>
+                <ul>
+                    <li><strong>Quarterly:</strong> Exercise breakers (open/close 3 times). Verify mechanical operation smooth. Check indicator lights and position indicators.</li>
+                    <li><strong>Semi-Annually:</strong> Inspect for signs of overheating or arcing. Clean exterior surfaces. Verify spring-charging mechanism functions. Check all terminations tight.</li>
+                    <li><strong>Annually:</strong> Contact resistance test (micro-ohm meter). Insulation resistance test. Trip time testing. Verify overcurrent settings correct. Lubricate moving parts per manufacturer specs.</li>
+                    <li><strong>2-3 Years:</strong> Full maintenance per manufacturer - contacts, springs, mechanisms. Trip unit calibration test. Perform primary injection test (high current test set).</li>
+                    <li><strong>After Fault:</strong> Inspect contacts for damage. Test operation thoroughly. Consider replacement if subjected to fault current >80% of rating.</li>
+                </ul>
+            </div>
+            
+            <div class="card">
+                <h3>Battery Systems (UPS/Emergency) - PM Schedule</h3>
+                <ul>
+                    <li><strong>Weekly:</strong> Check float voltage (13.5-13.8V per 12V battery). Verify charger operation. Check battery room temperature (<25°C ideal).</li>
+                    <li><strong>Monthly:</strong> Measure individual cell voltages (variation <0.2V between cells). Check specific gravity if flooded type. Inspect for bulging, leaks, or corrosion. Clean terminals if needed.</li>
+                    <li><strong>Quarterly:</strong> Discharge test (10-20% capacity check). Record all cell voltages under load. Check battery rack integrity. Verify ventilation adequate.</li>
+                    <li><strong>Semi-Annually:</strong> Internal resistance test (ohmic test). Torque all connections. Full capacity discharge test (80% minimum acceptable).</li>
+                    <li><strong>Annually:</strong> Full load discharge test to cutoff voltage. Replace any weak cells. Check charger calibration. Update battery monitoring system if equipped.</li>
+                    <li><strong>3-5 Years:</strong> Replace entire battery bank (3-5 years typical for VRLA, 5-7 for flooded).</li>
+                </ul>
+            </div>
+            
+            <div class="card">
+                <h3>Switchgear - PM Schedule</h3>
+                <ul>
+                    <li><strong>Quarterly:</strong> Infrared thermography scan. Check all meters and indicators. Verify safety interlocks functional. Inspect for signs of tracking or corona.</li>
+                    <li><strong>Semi-Annually:</strong> Clean insulators and bus bars (de-energized). Check all terminations torqued. Test ground continuity. Verify all labels legible and current.</li>
+                    <li><strong>Annually:</strong> Insulation resistance test. Contact resistance test. Protective relay testing. Breaker operation count check. Exercise all disconnect switches. Check control power transformer.</li>
+                    <li><strong>2-5 Years:</strong> Internal inspection and cleaning. Contact maintenance or replacement. Bus bar connection cleaning and retorquing. Update protective relay settings based on current coordination study.</li>
+                </ul>
+            </div>
+            
+            <div class="card">
+                <h3>Emergency Generators - PM Schedule</h3>
+                <ul>
+                    <li><strong>Weekly:</strong> Exercise run (30 minutes minimum, 30% load minimum). Check oil level. Check coolant level. Inspect for leaks. Record run time and alarms.</li>
+                    <li><strong>Monthly:</strong> Load bank test (at least 50% rated load). Check battery voltage (24V or 48V system). Test battery charger. Inspect fuel system. Check air filter condition.</li>
+                    <li><strong>Quarterly:</strong> Change engine oil and filter. Check coolant quality. Test transfer switch operation. Verify automatic start sequence. Inspect exhaust system. Check all gauges calibrated.</li>
+                    <li><strong>Semi-Annually:</strong> Load bank test at 100% load for 2 hours. Replace fuel filters. Check/adjust valve clearances. Test governor operation. Inspect cooling system.</li>
+                    <li><strong>Annually:</strong> Full load test including load rejection test. Replace air filter. Replace spark plugs (gas) or fuel injectors service (diesel). Complete electrical system testing. Generator output testing (voltage regulation, frequency).</li>
+                    <li><strong>2-3 Years:</strong> Replace coolant. Replace batteries. Major engine service per manufacturer schedule.</li>
+                </ul>
+            </div>
+            
+            <div class="safety">
+                <strong>PM Safety Note:</strong> Always follow LOTO procedures before maintenance. Document all maintenance activities. Trend measurement data to predict failures. Adjust schedules based on operating hours and environmental conditions. Critical equipment may require more frequent maintenance.
+            </div>
+        </div>
+        
+        <div id="contacts" class="content-section">
+            <h2>Emergency Contacts Template</h2>
+            
+            <div class="warning">
+                This is a TEMPLATE only. Fill in with your facility-specific contact information and post in visible locations throughout the plant.
+            </div>
+            
+            <div class="card">
+                <h3>Emergency Services</h3>
+                <ul>
+                    <li><strong>Emergency (Fire/Medical/Police):</strong> 911 or _____________</li>
+                    <li><strong>Plant Security:</strong> Ext: _______ Mobile: _____________</li>
+                    <li><strong>Plant Emergency Coordinator:</strong> _____________</li>
+                    <li><strong>First Aid/Medical:</strong> _____________</li>
+                    <li><strong>Fire Department Direct:</strong> _____________</li>
+                    <li><strong>Local Hospital:</strong> _____________</li>
+                    <li><strong>Poison Control:</strong> 1-800-222-1222</li>
+                    <li><strong>Ambulance Service:</strong> _____________</li>
+                </ul>
+            </div>
+            
+            <div class="card">
+                <h3>Electrical Department</h3>
+                <ul>
+                    <li><strong>Electrical Supervisor:</strong> _____________</li>
+                    <li><strong>Electrical Manager:</strong> _____________</li>
+                    <li><strong>Lead Electrician (Day Shift):</strong> _____________</li>
+                    <li><strong>Lead Electrician (Night Shift):</strong> _____________</li>
+                    <li><strong>Electrical Shop:</strong> Ext: _______ Mobile: _____________</li>
+                    <li><strong>On-Call Electrician:</strong> _____________ (After Hours)</li>
+                    <li><strong>Electrical Engineer:</strong> _____________</li>
+                    <li><strong>Instrumentation Tech:</strong> _____________</li>
+                </ul>
+            </div>
+            
+            <div class="card">
+                <h3>Management & Safety</h3>
+                <ul>
+                    <li><strong>Plant Manager:</strong> _____________</li>
+                    <li><strong>Maintenance Manager:</strong> _____________</li>
+                    <li><strong>Safety Manager/EHS:</strong> _____________</li>
+                    <li><strong>Operations Manager:</strong> _____________</li>
+                    <li><strong>Facilities Manager:</strong> _____________</li>
+                    <li><strong>Engineering Manager:</strong> _____________</li>
+                    <li><strong>HR Manager:</strong> _____________</li>
+                </ul>
+            </div>
+            
+            <div class="card">
+                <h3>Utility Companies</h3>
+                <ul>
+                    <li><strong>Electric Utility Company:</strong> _____________</li>
+                    <li><strong>Electric Utility Emergency:</strong> _____________</li>
+                    <li><strong>Utility Account Manager:</strong> _____________</li>
+                    <li><strong>Natural Gas Company:</strong> _____________</li>
+                    <li><strong>Gas Emergency/Leak Line:</strong> _____________</li>
+                    <li><strong>Water Utility:</strong> _____________</li>
+                </ul>
+            </div>
+            
+            <div class="card">
+                <h3>Equipment Vendors & Support</h3>
+                <ul>
+                    <li><strong>VFD Manufacturer Support:</strong> _____________</li>
+                    <li><strong>Motor Supplier:</strong> _____________</li>
+                    <li><strong>MCC/Switchgear Manufacturer:</strong> _____________</li>
+                    <li><strong>PLC/Controls Vendor:</strong> _____________</li>
+                    <li><strong>Transformer Supplier:</strong> _____________</li>
+                    <li><strong>Generator Service:</strong> _____________</li>
+                    <li><strong>UPS System Support:</strong> _____________</li>
+                    <li><strong>Electrical Distributor:</strong> _____________</li>
+                    <li><strong>Emergency Parts Supplier (24/7):</strong> _____________</li>
+                </ul>
+            </div>
+            
+            <div class="card">
+                <h3>Contractors & Services</h3>
+                <ul>
+                    <li><strong>Electrical Contractor (Primary):</strong> _____________</li>
+                    <li><strong>Electrical Contractor (Backup):</strong> _____________</li>
+                    <li><strong>Arc Flash Study Consultant:</strong> _____________</li>
+                    <li><strong>Transformer Oil Testing Lab:</strong> _____________</li>
+                    <li><strong>Motor Repair Shop:</strong> _____________</li>
+                    <li><strong>Breaker Testing Service:</strong> _____________</li>
+                    <li><strong>Thermography Service:</strong> _____________</li>
+                    <li><strong>Relay Testing Service:</strong> _____________</li>
+                </ul>
+            </div>
+            
+            <div class="card">
+                <h3>Regulatory & Inspection</h3>
+                <ul>
+                    <li><strong>Local Electrical Inspector:</strong> _____________</li>
+                    <li><strong>OSHA Regional Office:</strong> _____________</li>
+                    <li><strong>State Electrical Board:</strong> _____________</li>
+                    <li><strong>Insurance Company:</strong> _____________</li>
+                    <li><strong>EPA Contact:</strong> _____________</li>
+                    <li><strong>Fire Marshal:</strong> _____________</li>
+                </ul>
+            </div>
+            
+            <div class="card">
+                <h3>Internal Departments</h3>
+                <ul>
+                    <li><strong>Production/Operations:</strong> Ext: _______</li>
+                    <li><strong>Maintenance Office:</strong> Ext: _______</li>
+                    <li><strong>Stores/Parts Room:</strong> Ext: _______</li>
+                    <li><strong>Quality Control:</strong> Ext: _______</li>
+                    <li><strong>IT/Network Support:</strong> Ext: _______</li>
+                    <li><strong>Purchasing:</strong> Ext: _______</li>
+                    <li><strong>Shipping/Receiving:</strong> Ext: _______</li>
+                </ul>
+            </div>
+            
+            <div class="card">
+                <h3>After-Hours Protocol</h3>
+                <ul>
+                    <li><strong>On-Call Manager:</strong> _____________ (Rotate weekly/monthly)</li>
+                    <li><strong>Emergency Response Team Leader:</strong> _____________</li>
+                    <li><strong>Building Access After Hours:</strong> _____________</li>
+                    <li><strong>Gate Security:</strong> _____________</li>
+                    <li><strong>Alarm Monitoring Company:</strong> _____________</li>
+                </ul>
+            </div>
+            
+            <div class="safety">
+                <strong>Important Instructions:</strong> Keep this list updated quarterly. Post copies in electrical shop, control room, and main office. Program key numbers into mobile phones. Test emergency numbers annually. Include building location and address when calling emergency services. Know your plant's street address and nearest cross streets.
+            </div>
+            
+            <div class="card">
+                <h3>Critical Information to Provide During Emergency</h3>
+                <ul class="checklist">
+                    <li>Your name and callback number</li>
+                    <li>Exact location (building, floor, room number)</li>
+                    <li>Nature of emergency (electrical shock, arc flash, fire, etc.)</li>
+                    <li>Number of people injured</li>
+                    <li>Condition of injured person(s)</li>
+                    <li>Any immediate dangers (live wires, fire, smoke, etc.)</li>
+                    <li>Actions already taken</li>
+                    <li>Stay on line until dispatcher says to hang up</li>
+                </ul>
+            </div>
+            
+            <div class="warning">
+                For electrical emergencies: De-energize equipment if safe to do so. Evacuate area. Do not touch victim still in contact with energized conductor. Use insulated rescue hook if available and trained. Wait for emergency services if not safe to intervene.
+            </div>
+        </div>
+        
+        <div id="skills" class="content-section">
+            <h2>Skills Development Guide</h2>
+            
+            <div class="card">
+                <h3>Level 1: Foundational Skills <span class="skill-level beginner">BEGINNER</span></h3>
+                <ul>
+                    <li><strong>Electrical Theory:</strong> Ohm's Law, power calculations, AC/DC principles, series/parallel circuits</li>
+                    <li><strong>Blueprint Reading:</strong> Interpret single-line diagrams, schematic drawings, wiring diagrams, panel schedules</li>
+                    <li><strong>Hand Tools:</strong> Proper use of screwdrivers, pliers, wire strippers, crimpers, and cutters</li>
+                    <li><strong>Measurement:</strong> Use multimeters for voltage, current, resistance, and continuity testing</li>
+                    <li><strong>Safety Procedures:</strong> LOTO fundamentals, PPE selection, hazard recognition, emergency response</li>
+                    <li><strong>Conduit Work:</strong> Bending, cutting, threading, and installing rigid and EMT conduit</li>
+                    <li><strong>Cable Installation:</strong> Pulling techniques, cable tray fills, support spacing, labeling standards</li>
+                </ul>
+            </div>
+            
+            <div class="card">
+                <h3>Level 2: Intermediate Skills <span class="skill-level intermediate">INTERMEDIATE</span></h3>
+                <ul>
+                    <li><strong>Motor Controls:</strong> Understanding contactors, overloads, starters, control transformers, and relay logic</li>
+                    <li><strong>PLC Basics:</strong> Ladder logic interpretation, I/O troubleshooting, basic programming concepts</li>
+                    <li><strong>Instrumentation:</strong> Calibrating sensors, transmitters, level switches, pressure switches, temperature devices</li>
+                    <li><strong>Power Distribution:</strong> Working with transformers, switchgear, panelboards, load calculations</li>
+                    <li><strong>Advanced Testing:</strong> Megohmmeter use, ground fault testing, circuit breaker testing, relay testing</li>
+                    <li><strong>VFD Operation:</strong> Parameter programming, troubleshooting common faults, understanding modulation techniques</li>
+                    <li><strong>Preventive Maintenance:</strong> Developing PM schedules, predictive maintenance techniques, reliability analysis</li>
+                </ul>
+            </div>
+            
+            <div class="card">
+                <h3>Level 3: Advanced Skills <span class="skill-level advanced">ADVANCED</span></h3>
+                <ul>
+                    <li><strong>Power Quality:</strong> Analyzing harmonics, power factor correction, voltage regulation, surge protection</li>
+                    <li><strong>Arc Flash Analysis:</strong> Calculating incident energy, selecting PPE, implementing risk reduction methods</li>
+                    <li><strong>Motor Analysis:</strong> Vibration analysis, current signature analysis, rotor bar testing, bearing diagnostics</li>
+                    <li><strong>System Integration:</strong> Industrial networks (Ethernet/IP, Profibus, Modbus), SCADA systems, HMI programming</li>
+                    <li><strong>Advanced PLC:</strong> Complex programming, function blocks, data handling, diagnostics and troubleshooting</li>
+                    <li><strong>Project Management:</strong> Planning shutdowns, managing contractors, budgeting, scheduling, documentation</li>
+                    <li><strong>Specialized Systems:</strong> UPS systems, emergency generators, lighting controls, fire alarm systems</li>
+                </ul>
+            </div>
+            
+            <div class="card">
+                <h3>Certification Pathways</h3>
+                <ul>
+                    <li><strong>NFPA 70E Qualified Person:</strong> Required for working on energized equipment. 3-year renewal cycle.</li>
+                    <li><strong>Journeyman Electrician:</strong> State-specific requirements. Typically requires 8,000 hours experience plus exam.</li>
+                    <li><strong>Master Electrician:</strong> Advanced license for design and supervisory work. Requires journeyman plus additional experience.</li>
+                    <li><strong>NICET Certification:</strong> Industrial electrical systems specialty. Levels I-IV available.</li>
+                    <li><strong>ISA Certified Control Systems Technician (CCST):</strong> Validates instrumentation and control skills.</li>
+                    <li><strong>OSHA 30-Hour:</strong> Construction or general industry. Covers comprehensive safety topics.</li>
+                    <li><strong>IEEE Membership:</strong> Access to standards, continuing education, and professional networking.</li>
+                </ul>
+            </div>
+            
+            <div class="card">
+                <h3>Continuous Learning Resources</h3>
+                <ul>
+                    <li>National Electrical Code (NEC) updates - published every 3 years</li>
+                    <li>NFPA 70E Standard for Electrical Safety in the Workplace - annual review</li>
+                    <li>Manufacturer training programs for equipment-specific skills</li>
+                    <li>Online courses through IAEI, Mike Holt Enterprises, or IEEE</li>
+                    <li>Trade journals: EC&M Magazine, Plant Engineering, Control Engineering</li>
+                    <li>Hands-on workshops for emerging technologies (IIoT, Industry 4.0)</li>
+                    <li>Mentorship programs with senior electricians and engineers</li>
+                </ul>
+            </div>
+            
+            <div class="safety">
+                <strong>Professional Development:</strong> Dedicate at least 40 hours annually to training and skill development. Technology evolves rapidly in industrial settings - staying current is essential for safety and career advancement.
+            </div>
+        </div>
+        
+        <footer>
+            © 2026 Plant Electricians Guide | For Educational & Training Purposes | Always Follow Facility-Specific Procedures
+        </footer>
+    </div>
+    
+    <script>
+        function showSection(sectionId) {
+            const sections = document.querySelectorAll('.content-section');
+            const buttons = document.querySelectorAll('.nav-btn');
+            
+            sections.forEach(section => {
+                section.classList.remove('active');
+            });
+            
+            buttons.forEach(button => {
+                button.classList.remove('active');
+            });
+            
+            document.getElementById(sectionId).classList.add('active');
+            event.target.classList.add('active');
+        }
+    </script>
+</body>
+</html>
